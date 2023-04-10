@@ -24,17 +24,22 @@ export default Search = ({navigation, route}) => {
         navigation.navigate('MusicDetails', { item });
       };
 
+    const handleButtonPress = () => {
+        navigation.navigate('MusicSaved');
+    }
+
   return (
     <View style={styles.main_container}>
+                <TouchableOpacity style={styles.navigateButton} onPress={handleButtonPress}><Text style={{color: '#fff'}}>Mes Musiques</Text></TouchableOpacity>
                <TextInput style={styles.textinput} placeholder='Rechecher'
                      onChangeText={handleSearchQueryChange}
                      value={searchQuery}
                />
-               <Button style={styles.button} title='Rechercher' onPress={handleSearchSubmit}/>
+               <TouchableOpacity style={styles.button} onPress={handleSearchSubmit}><Text style={styles.buttonText}>Rechercher</Text></TouchableOpacity>
 
                <FlatList
                  data={searchResults}
-                 keyExtractor={(item) => item.trackId}
+                 keyExtractor={(item) => item.trackId}  
                  renderItem={({ item }) => (
                   <TouchableOpacity onPress={() => handleItemPress(item)}>
                    <View>
@@ -60,19 +65,43 @@ const styles = StyleSheet.create({
       
        
     },
+
+    navigateButton: {
+        marginBottom: 20,
+        marginLeft: 250,
+        width: 150,
+        textAlign: 'center',
+        backgroundColor: '#1E6DF7',
+        borderRadius: 8,
+        justifyContent: 'center',
+        alignItems: 'center',
+
+    },
     textinput: { 
-        marginLeft: 5,
-        marginRight: 5,
-        height: 50, 
-        borderColor: '#000', 
-        borderRadius: 20,
-        borderWidth: 2, 
-        paddingLeft: 5
+        height: 40,
+        borderWidth: 1,
+        borderColor: '#ddd',
+        borderRadius: 10,
+        paddingHorizontal: 10,
+        marginBottom: 10,
     },
 
     button: {
-        borderRadius: 8,
-        width: 9,
+        height: 30,
+        borderRadius: 7,
+        width: 250,
+        marginBottom: 20,
+        marginLeft: '20%',
+        marginTop: 5,
+        backgroundColor: '#5990F0',
+        justifyContent: 'center',
+        alignItems: 'center',
+
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 15,
+        textAlign: 'center',
 
     }
 })
