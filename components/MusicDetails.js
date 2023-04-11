@@ -92,7 +92,7 @@ export default MusicDetails = ({ route, navigation }) => {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#fff',
+      
     },
     title: {
       fontSize: 20,
@@ -115,7 +115,7 @@ export default MusicDetails = ({ route, navigation }) => {
       marginTop: 20,
     },
     buttonText: {
-      color: '#fff',
+      color: '#000',
       fontSize: 16,
       fontWeight: 'bold',
     },

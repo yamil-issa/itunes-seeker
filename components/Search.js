@@ -30,7 +30,7 @@ export default Search = ({navigation, route}) => {
 
   return (
     <View style={styles.main_container}>
-                <TouchableOpacity style={styles.navigateButton} onPress={handleButtonPress}><Text style={{color: '#fff'}}>Mes Musiques</Text></TouchableOpacity>
+               <TouchableOpacity style={styles.navigateButton} onPress={handleButtonPress}><Text style={{color: '#fff'}}>Ma bibliothèque</Text></TouchableOpacity>
                <TextInput style={styles.textinput} placeholder='Rechecher'
                      onChangeText={handleSearchQueryChange}
                      value={searchQuery}
@@ -42,12 +42,12 @@ export default Search = ({navigation, route}) => {
                  keyExtractor={(item) => item.trackId}  
                  renderItem={({ item }) => (
                   <TouchableOpacity onPress={() => handleItemPress(item)}>
-                   <View>
-                     <Text>{item.artistName} - {item.trackName}</Text>
+                   <View style={styles.musicItem}>
                      <Image
                        source={{ uri: item.artworkUrl100 }}
                        style={{ width: 100, height: 100 }}
                      />
+                     <Text style={{color: '#000', width: 220}}>{item.artistName} - {item.trackName}</Text>
                    </View>
                    </TouchableOpacity>
                  )}
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     main_container: {
         flex: 1,
         marginTop: 50,
-      
+        marginLeft: 10
        
     },
 
@@ -79,11 +79,19 @@ const styles = StyleSheet.create({
     },
     textinput: { 
         height: 40,
-        borderWidth: 1,
-        borderColor: '#ddd',
         borderRadius: 10,
+        backgroundColor: '#fff',
         paddingHorizontal: 10,
         marginBottom: 10,
+    },
+
+    musicItem: {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 5,
+        marginBottom: 10,
+        alignItems: 'center'
+
     },
 
     button: {
@@ -99,7 +107,7 @@ const styles = StyleSheet.create({
 
     },
     buttonText: {
-        color: 'white',
+        color: '#000',
         fontSize: 15,
         textAlign: 'center',
 

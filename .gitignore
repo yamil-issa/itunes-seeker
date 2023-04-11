@@ -3,6 +3,8 @@ node_modules/
 dist/
 npm-debug.*
 *.jks
+*.vscode
+*.idea
 *.p8
 *.p12
 *.key

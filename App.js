@@ -14,15 +14,17 @@ export default function App() {
         <Stack.Screen
           name="Search"
           component={Search}
-          options={{ title: 'iTunes Search' }}/>
+          options={{ title: 'Home' }}
+          />
         <Stack.Screen
           name="MusicDetails"
           component={MusicDetails}
-          options={{ title: 'Music Details' }}/>
+          options={{ title: 'Details' }}
+          />
          <Stack.Screen
           name="MusicSaved"
           component={MusicSaved}
-          options={{ title: 'Mes Musiques' }}/>
+          options={{ title: 'Ma bibliothèque' }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
