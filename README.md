@@ -8,5 +8,5 @@ Elle permet de :
 - et de noter un morceau
 
 ## installation 
-- Telecharger Expo go
+- Telechargez Expo go
 - Cliquez sur le lien et scannez le qr code : https://expo.dev/@yamil/rave-project?serviceType=classic&distribution=expo-go
