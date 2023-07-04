@@ -6,3 +6,7 @@ Elle permet de :
 - d'afficher la fiche d'un morceau recherché 
 - d'ajouter un morceau à sa propre bibliothèque 
 - et de noter un morceau
+
+## installation 
+- Telecharger Expo go
+- Cliquez sur le lien et scannez le qr code : https://expo.dev/@yamil/rave-project?serviceType=classic&distribution=expo-go
